@@ -30,13 +30,13 @@ public class SupplierDAOTestCase
 	@Test
 	public void createSupplierTestCase() 
 	{
-		supplier.setId("");
-		supplier.setName("");
-		supplier.setAddress("");
+		supplier.setId("SP_Reliance_001");
+		supplier.setName("pradeep");
+		supplier.setAddress("Hyderabad");
 		boolean flag = supplierDAO.save(supplier);
 		assertEquals("create Supplier TestCase",true,flag);
 	}
-	@Test
+	 /*@Test
 	   public void updateSupplierTestCase()
 	   {
 			supplier.setId("Appliances_012");
@@ -45,15 +45,15 @@ public class SupplierDAOTestCase
 			boolean flag = supplierDAO.save(supplier);
 			assertEquals("update Supplier TestCase",true,flag);
 	   }
-	  /* @Test
+	  @Test
 	   public void deleteSupplierTestCase()
 	   {
 		
-	   }*/
+	   }
 	   @Test
 	   public void getAllSupplierTestCase()
 	   {
 		   List<Supplier> categories = supplierDAO.list();
 		   assertEquals(11,categories.size());
-	   }
+	   }*/
 }

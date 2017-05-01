@@ -1,8 +1,12 @@
 package com.niit.backend.domain;
 
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
@@ -18,6 +22,8 @@ public class Category
   @Column(name="name")
   private String name;
   private String description;
+  private Set<Product> products;
+  @OneToMany(mappedBy="category",fetch=FetchType.EAGER)
   public String getId() 
   {
 	return id;
@@ -42,5 +48,12 @@ public class Category
   {
 	this.description = description;
   }
-  
+  public Set<Product> getProducts() 
+  {
+	return products;
+  }
+  public void setProducts(Set<Product> products) 
+  {
+	this.products = products;
+  }
 }

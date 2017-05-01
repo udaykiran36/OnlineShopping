@@ -35,7 +35,7 @@ public class CategoryDAOTestCase
 		boolean flag = categoryDAO.save(category);
 		assertEquals("create Category TestCase",true,flag);
    }
-   @Test
+   /* @Test
    public void updateCategoryTestCase()
    {
 		category.setId("Appliances_012");
@@ -44,15 +44,15 @@ public class CategoryDAOTestCase
 		boolean flag = categoryDAO.save(category);
 		assertEquals("update Category TestCase",true,flag);
    }
-  /* @Test
+  @Test
    public void deleteCategoryTestCase()
    {
 	
-   }*/
+   }
    @Test
    public void getAllCategoriesTestCase()
    {
 	   List<Category> categories = categoryDAO.list();
 	   assertEquals(11,categories.size());
-   }
+   }*/
 }

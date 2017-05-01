@@ -30,16 +30,16 @@ public class ProductDAOTestCase
 	@Test
 	public void createProductTestCase() 
 	   {
-			product.setId("");
-			product.setName("");
-			product.setDescription("");
-			product.setCategoryID("");
-			product.setPrice(1000);
-			product.setSupplierID("");
+			product.setId("Elec_Product_001");
+			product.setName("Lenovo");
+			product.setDescription("Lenovo Mobile");
+			product.setCategoryID("Electronics_001");
+			product.setPrice(10000);
+			product.setSupplierID("SP_Reliance_001");
 			boolean flag = productDAO.save(product);
 			assertEquals("create Product TestCase",true,flag);
 	   }
-	   @Test
+	 /* @Test
 	   public void updateCategoryTestCase()
 	   {
 			product.setId("");
@@ -51,17 +51,17 @@ public class ProductDAOTestCase
 			boolean flag = productDAO.save(product);
 			assertEquals("update Product TestCase",true,flag);
 	   }
-	  /* @Test
+	  @Test
 	   public void deleteCategoryTestCase()
 	   {
 		
-	   }*/
+	   }
 	   @Test
 	   public void getAllCategoriesTestCase()
 	   {
 		   List<Product> categories = productDAO.list();
 		   assertEquals(11,categories.size());
-	   }
+	   }*/
 
 
 }
