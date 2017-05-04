@@ -15,7 +15,7 @@ import com.niit.backend.domain.Supplier;
 
 public class SupplierDAOTestCase 
 {
-	@Autowired static AnnotationConfigApplicationContext context;
+	 @Autowired static AnnotationConfigApplicationContext context;
 	 @Autowired static SupplierDAO supplierDAO;
 	 @Autowired static Supplier supplier;
 	 @BeforeClass

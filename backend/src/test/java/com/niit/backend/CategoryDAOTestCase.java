@@ -24,14 +24,14 @@ public class CategoryDAOTestCase
 	   context.scan("com.niit");
 	   context.refresh();
 	   categoryDAO = (CategoryDAO) context.getBean("categoryDAO");
-	   category = (Category) context.getBean("category");
+	   category = (Category) context.getBean("category");  
    }
    @Test
    public void createCategoryTestCase() 
    {
-		category.setId("Appliancess_001");
+		category.setId("Appliances_012");
 		category.setName("Appliances");
-		category.setDescription("Appliances products");
+		category.setDescription("All Appliances Products are Available");
 		boolean flag = categoryDAO.save(category);
 		assertEquals("create Category TestCase",true,flag);
    }
