@@ -31,8 +31,8 @@
             <i class="glyphicon glyphicon-search"></i>
           </button>
         </div>
-      </div>
-      </form>
+    </div>
+    </form>
     <ul class="nav navbar-nav">
       <li class="active"><a href="#"><span class="glyphicon glyphicon-home"></span> Home</a></li>
       <li><a href="#">Page 1</a></li>
