@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta charset="utf-8">
@@ -21,30 +21,23 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">WebSiteName</a>
+      <a class="navbar-brand" href="home">SHOP WORLD</a>
     </div>
-    <form class="navbar-form navbar-left">
-    <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search">
-        <div class="input-group-btn">
-          <button class="btn btn-primary" type="submit">
-            <i class="glyphicon glyphicon-search"></i>
-          </button>
-        </div>
-    </div>
-    </form>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#"><span class="glyphicon glyphicon-home"></span> Home</a></li>
-      <li><a href="#">Page 1</a></li>
-      <li><a href="#">Page 2</a></li>
+ 
+      <li><a href="product">product</a></li>
+      <li><a href="contact">AboutUS</a></li>
+      <li><a href="contact">ContactUs</a></li>
     </ul>  
      <ul class="nav navbar-nav navbar-right">
-      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      <li><a href="registration"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
     </ul>
   </div>
 </nav>
+<h2>Welcome to ShopingCart</h2>
 
-<h1>Welcome to Learn Spring</h1>
+<jsp:include page="carousel.jsp"></jsp:include>
+<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

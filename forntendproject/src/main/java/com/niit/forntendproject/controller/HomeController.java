@@ -13,9 +13,21 @@ public class HomeController
 	
 	public ModelAndView home()
 	{
-		 ModelAndView mv=new ModelAndView("page");
+		 ModelAndView mv=new ModelAndView("home");
 		 
 		 return mv;
 		 
+	}
+	@RequestMapping( value ={"/login"})
+	public ModelAndView login()
+	{
+		ModelAndView mv=new ModelAndView("login");
+		return mv;
+	}
+	@RequestMapping( value ={"/registration"})
+	public ModelAndView registration()
+	{
+		ModelAndView mv=new ModelAndView("registration");
+		return mv;
 	}
 }

@@ -14,6 +14,7 @@ import com.niit.backend.domain.User;
 
 @Repository("userDAO")
 @Transactional
+
 public class UserDAOImpl implements UserDAO
 {
 	@Autowired
@@ -23,6 +24,7 @@ public class UserDAOImpl implements UserDAO
 	{
 		this.sessionFactory=sessionFactory;
 	}
+	@Override
 	public boolean save(User user) {
 		try
 		{
@@ -35,6 +37,7 @@ public class UserDAOImpl implements UserDAO
 		}
 		return true;
 	}
+	@Override
 	public boolean update(User user) {
 		try
 		{
@@ -47,6 +50,7 @@ public class UserDAOImpl implements UserDAO
 		}
 		return true;
 	}
+	@Override
 	public boolean validate(String id, String password) {
 		Query query=sessionFactory.getCurrentSession().createQuery(" from User where id = ? and password = ?");
 		query.setString(0, id);
@@ -60,9 +64,11 @@ public class UserDAOImpl implements UserDAO
 			return true;
 		}
 	}
+	@Override
 	public List<User> list() {
 		return sessionFactory.getCurrentSession().createQuery("from User").list();
 	}
+	@Override
 	public User get(String id) {
 		return (User)sessionFactory.getCurrentSession().get(User.class, id);
 
