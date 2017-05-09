@@ -28,14 +28,14 @@ public class UserDAOTestCase
 		user = (User)context.getBean("user");
 	}
 	
-	@Test
+	/*@Test
 	public void createUserTestCase() 
 	{
-		user.setId("user1");
-		user.setName("user1");
-		user.setPassword("ukiran");
-		user.setRole("ROLE_USER");
-		user.setContact("8899776688");
+		user.setId("admin");
+		user.setName("admin");
+		user.setPassword("admin");
+		user.setRole("ROLE_ADMIN");
+		user.setContact("8899775522");
 		boolean flag = userDAO.save(user);
 		assertEquals("createUser TestCase",true,flag);
 	}
@@ -75,5 +75,5 @@ public class UserDAOTestCase
 		//if it is different - TC fail
 		assertEquals(12, actualSize);
 	}
-
+*/
 }
