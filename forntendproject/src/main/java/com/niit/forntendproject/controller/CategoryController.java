@@ -75,6 +75,9 @@ public class CategoryController
 		log.debug("You are going to delete " + id);
 		ModelAndView mv = new ModelAndView("redirect:/manageCategories");
 		int size = productDAO.getAllProductsByCategoryID(id).size();
+		
+	
+		
 		if(size!=0)
 		{
 			log.debug("Few products are there under this category. you can not delete");
