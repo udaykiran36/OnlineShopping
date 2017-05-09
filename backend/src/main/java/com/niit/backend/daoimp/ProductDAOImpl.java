@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.niit.backend.dao.ProductDAO;
+import com.niit.backend.domain.Category;
 import com.niit.backend.domain.Product;
 
 @Repository("productDAO")
@@ -71,6 +72,16 @@ public class ProductDAOImpl implements ProductDAO
 	public Product getProductByName(String name) 
 	{
 		return (Product) sessionFactory.getCurrentSession().createQuery("from product where name=?").setString(0, name).uniqueResult();
+	}
+	@Override
+	public List<Category> getAllProductsByCategoryID(String id) 
+	{
+		return (List<Category>) sessionFactory.getCurrentSession().createQuery("from product where id=?").setString(0, id).uniqueResult();
+	}
+	@Override
+	public List<Product> getSimilarProducts(String search_string) 
+	{
+		return (List<Product>) sessionFactory.getCurrentSession().createQuery("search_string").setString(0, search_string).uniqueResult();
 	}
 
 }

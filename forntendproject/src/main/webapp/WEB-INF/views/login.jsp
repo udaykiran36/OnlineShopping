@@ -54,6 +54,7 @@
     </ul>
   </div>
 </nav>
+    <form action="validate" method="post">
     <div class="container">
         <div class="row vertical-center-row">
             <div class="col-xs-12 col-sm-8 col-md-6 col-center-block">
@@ -84,6 +85,7 @@
             </div>
         </div>
     </div>
+    </form>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="http://cdn.jsdelivr.net/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script>

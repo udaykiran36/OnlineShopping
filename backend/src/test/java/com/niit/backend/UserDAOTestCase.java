@@ -28,7 +28,7 @@ public class UserDAOTestCase
 		user = (User)context.getBean("user");
 	}
 	
-	/*@Test
+	@Test
 	public void createUserTestCase() 
 	{
 		user.setId("admin");
@@ -40,7 +40,7 @@ public class UserDAOTestCase
 		assertEquals("createUser TestCase",true,flag);
 	}
 	
-	
+	/*
 	@Test
 	public void updateUserTestCase()
 	{
