@@ -76,5 +76,5 @@ public class CategoryDAOImpl implements CategoryDAO
 	{
 		return (Category) sessionFactory.getCurrentSession().createQuery("from category where name=?").setString(0,name).uniqueResult();
 	}
-
+	
 }

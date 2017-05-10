@@ -24,14 +24,14 @@ public class Product
   private int price;
   private String categoryID;
   private String supplierID;
-  /*@ManyToOne
+  @ManyToOne
   @JoinColumn(name="category_id", updatable = false, insertable = false, nullable = false)
   private Category category;
   @ManyToOne
   @JoinColumn(name="supplier_id", updatable = false, insertable = false, nullable = false)
   private Supplier supplier;
   @Transient
-  private MultipartFile image;*/
+  private MultipartFile image;
   public String getId() 
   {
 	return id;
@@ -80,7 +80,7 @@ public class Product
   {
 	this.supplierID = supplierID;
   }
-  /*public Category getCategory() 
+  public Category getCategory() 
   {
 	return category;
   }
@@ -103,5 +103,5 @@ public class Product
   public void setImage(MultipartFile image) 
   {
 	this.image = image;
-  }  */
+  }
 }

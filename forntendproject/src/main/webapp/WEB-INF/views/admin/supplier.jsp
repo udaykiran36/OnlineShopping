@@ -25,7 +25,7 @@
 
 		<input type="text" name="id"  value="${selectedSupplier.id}"> 
 		<input type="text" name="name" value="${selectedSupplier.name}"> 
-		<input type="text" name="description" value="${selectedSupplier.address}"> 
+		<input type="text" name="address" value="${selectedSupplier.address}"> 
         <input type="submit"	value="Update Supplier">
 	</form>
 	

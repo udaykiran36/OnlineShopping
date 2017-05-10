@@ -1,5 +1,7 @@
 package com.niit.forntendproject.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +23,7 @@ public class UserController
 	@Autowired User  user;
 	@Autowired CategoryDAO categoryDAO;
 	@Autowired  Category  category;
+	@Autowired  HttpSession session;
 	@PostMapping("validate")
 	public ModelAndView login(@RequestParam("userName") String id, 
 			@RequestParam("password") String password)
@@ -28,7 +31,7 @@ public class UserController
 		log.debug("Starting of the method login");
 		
 		log.info("You are login with the id "+id);
-		ModelAndView mv = new ModelAndView("/Home");
+		ModelAndView mv = new ModelAndView("/home");
 		 if(userDAO.validate(id, password)==true)
 		 {
 			 log.debug("Valid credentials");
@@ -47,11 +50,13 @@ public class UserController
 			 {
 				 log.debug("You are admin");
 				 mv.addObject("isAdmin", "true");
+				 session.setAttribute("role", "ROLE_ADMIN");
 			 }
 			 else
 			 {
 				 log.debug("You are customer");
 				 mv.addObject("isAdmin", "false");
+				 session.setAttribute("role", "ROLE_USER");
 			 }
 		 }
 		 else

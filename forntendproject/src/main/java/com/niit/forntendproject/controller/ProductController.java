@@ -23,6 +23,7 @@ import com.niit.backend.dao.SupplierDAO;
 import com.niit.backend.domain.Category;
 import com.niit.backend.domain.Product;
 import com.niit.backend.domain.Supplier;
+import com.niit.forntendproject.util.FileUtil;
 
 @Controller
 public class ProductController 
@@ -41,11 +42,11 @@ public class ProductController
 	//private String path = "D:\\ShoppingCart\\Images";
 	
 	//private String path = "resources/img/";
-  private String path   ="D://Workspace//NIITWS//ShoppingCartWS//ShopingCartFrontEnd//src//main//webapp//resources//img";
+ // private String path   ="D://Workspace//NIITWS//ShoppingCartWS//ShopingCartFrontEnd//src//main//webapp//resources//img";
 	
 	// get the path where you downloaded tomcat
   //D:\Softwares\Server\apache-tomcat-8.0.33
-  //private  String path =System.getProperty("catalina.home");
+  private  String path =System.getProperty("catalina.home");
   @RequestMapping("/search_product/{search_string}")
 	public ModelAndView getAllProductBySearchString(@PathVariable("search_string")
 		String search_string)
@@ -66,7 +67,8 @@ public class ProductController
 	
 	}
 	@RequestMapping(value = "/manage_products", method = RequestMethod.GET)
-	public String listProducts(Model model) {
+	public String listProducts(Model model)
+	{
 		log.debug("Starting of the method listProducts");
 		model.addAttribute("product", new Product());
 		/*model.addAttribute("category", new Category());
@@ -82,25 +84,24 @@ public class ProductController
 	// For add and update product both
 	@RequestMapping(value = "/manage_product_add", method = RequestMethod.POST)
 	public String addProduct(@ModelAttribute("product") Product product,
-			 @RequestParam("image") MultipartFile file, Model model) {
-	
-		
+			 @RequestParam("image") MultipartFile file, Model model)
+	{
 		log.debug("Starting of the method addProduct");
-		//Category category = categoryDAO.getByName(product.getCategory().getName());
+		Category category = categoryDAO.getCategoryByName(product.getCategory().getName());
 		// categoryDAO.saveOrUpdate(category); // why to save??
 
-		//Supplier supplier = supplierDAO.getByName(product.getSupplier().getName());
+		Supplier supplier = supplierDAO.getSupplierByName(product.getSupplier().getName());
 		// supplierDAO.saveOrUpdate(supplier); // Why to save??
 
-		//product.setCategory(category);
-		//product.setSupplier(supplier);
+		product.setCategory(category);
+		product.setSupplier(supplier);
 
-		//product.setCategory_id(category.getId());
-		//product.setSupplier_id(supplier.getId());
+		product.setCategoryID(category.getId());
+		product.setSupplierID(supplier.getId());
 		//product.setId(Util.removeComman(product.getId()));
-		//productDAO.saveOrUpdate(product);
+		productDAO.update(product);
 
-		//FileUtil.upload(path, file, product.getId() + ".jpg");
+		FileUtil.upload(path, file, product.getId() + ".jpg");
 		log.debug("Ending of the method addProduct");
 		model.addAttribute("isAdminClickedProducts", "true");
 		model.addAttribute("productList", this.productDAO.list());
@@ -114,7 +115,8 @@ public class ProductController
 	}
 
 	@RequestMapping("manage_product/remove/{id}")
-	public String removeProduct(@PathVariable("id") String id, ModelMap model) throws Exception {
+	public String removeProduct(@PathVariable("id") String id, ModelMap model) throws Exception
+	{
 		log.debug("Starting of the method removeProduct");
 		try {
 			productDAO.delete(id);
@@ -128,11 +130,12 @@ public class ProductController
 	}
 
 	@RequestMapping("manage_product/edit/{id}")
-	public String editProduct(@PathVariable("id") String id, Model model) {
+	public String editProduct(@PathVariable("id") String id, Model model)
+	{
 		//categoryDAO.saveOrUpdate(category);
 		log.debug(" Starting of the method editProduct");
 		
-		//product = productDAO.get(id);
+		product = productDAO.getProductByID(id);
 		model.addAttribute("selectedProduct", product);
 		log.debug(" End of the method editProduct");
 		return "forward:/manage_products";
@@ -140,7 +143,8 @@ public class ProductController
 
 	// Get select product details
 	@RequestMapping("manage_product/get/{id}")
-	public ModelAndView getSelectedProduct(@PathVariable("id") String id, RedirectAttributes redirectAttributes) {
+	public ModelAndView getSelectedProduct(@PathVariable("id") String id, RedirectAttributes redirectAttributes)
+	{
 		log.debug("Starting of the method getSelectedProduct");
 		ModelAndView mv = new ModelAndView("redirect:/");
 		//redirectAttributes.addFlashAttribute("selectedProduct",  productDAO.get(id));

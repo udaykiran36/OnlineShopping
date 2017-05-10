@@ -18,5 +18,6 @@ public interface CategoryDAO
 	public Category getCategoryByID(String id);
 	//get category by name
 	public Category getCategoryByName(String name);
+	
  
 }
