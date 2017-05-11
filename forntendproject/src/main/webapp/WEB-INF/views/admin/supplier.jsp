@@ -57,6 +57,8 @@
 					
 	  <td><a href="<c:url value='/manage_category_delete/${category.id}' />">Delete</a></td>
 	 </td>
+	 
+	 
 	   
 	   
  
