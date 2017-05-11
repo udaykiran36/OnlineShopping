@@ -31,9 +31,9 @@ public class UserDAOTestCase
 	@Test
 	public void createUserTestCase() 
 	{
-		user.setId("admin");
-		user.setName("admin");
-		user.setPassword("admin");
+		user.setId("uday");
+		user.setName("kiran");
+		user.setPassword("kiranud");
 		user.setRole("ROLE_ADMIN");
 		user.setContact("8899775522");
 		boolean flag = userDAO.save(user);

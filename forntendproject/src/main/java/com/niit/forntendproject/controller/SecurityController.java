@@ -33,7 +33,7 @@ public class SecurityController
 	@Autowired
 	private MyCart myCart;*/
 
-	@Autowired	private HttpSession session;
+	@Autowired  private HttpSession session;
 	
 	@Autowired	private CategoryDAO categoryDAO;
 

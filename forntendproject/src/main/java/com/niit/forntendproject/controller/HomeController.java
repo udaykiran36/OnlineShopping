@@ -20,9 +20,9 @@ public class HomeController
 {
     @Autowired HttpSession session;
 	
-	@Autowired  Category category;
+	@Autowired Category category;
 	
-	@Autowired  CategoryDAO  categoryDAO;
+	@Autowired CategoryDAO  categoryDAO;
 	
 	@Autowired Product product;
 	@Autowired ProductDAO productDAO;

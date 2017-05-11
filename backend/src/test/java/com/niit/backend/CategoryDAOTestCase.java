@@ -29,9 +29,9 @@ public class CategoryDAOTestCase
    @Test
    public void createCategoryTestCase() 
    {
-		category.setId("Appliances_113");
-		category.setName("electron");
-		category.setDescription("All Appliances Products are Available");
+		category.setId("ELECTRONICS_001");
+		category.setName("ELECTRONICS");
+		category.setDescription("Products Available");
 		boolean flag = categoryDAO.save(category);
 		assertEquals("create Category TestCase",true,flag);
    }

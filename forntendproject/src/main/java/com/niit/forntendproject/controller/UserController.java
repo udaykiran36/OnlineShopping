@@ -22,7 +22,7 @@ public class UserController
 	@Autowired UserDAO userDAO;
 	@Autowired User  user;
 	@Autowired CategoryDAO categoryDAO;
-	@Autowired  Category  category;
+	@Autowired  Category category;
 	@Autowired  HttpSession session;
 	@PostMapping("validate")
 	public ModelAndView login(@RequestParam("userName") String id, 
