@@ -11,6 +11,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 @Configuration
 @ComponentScan(basePackages ={"com.niit.backend"})
@@ -91,7 +92,7 @@ public class ApplicationConfig
 		return transactionManager;
 	}
 	
-	/**@Bean(name="multipartResolver")
+	@Bean(name="multipartResolver")
 	public CommonsMultipartResolver getMultipartResolver(){
 		
 		long maxUploadSize = 1000000;
@@ -100,6 +101,6 @@ public class ApplicationConfig
 		
 		return multipartResolver;
 	}
-**/
+
 
 }
