@@ -21,8 +21,8 @@ public class Supplier
 	@Column(name="name")
 	private String name;
 	private String address;
-	/*@OneToMany(mappedBy="supplier",fetch=FetchType.EAGER)
-	private Set<Product> products;*/
+	@OneToMany(mappedBy="supplier",fetch=FetchType.EAGER)
+	private Set<Product> products;
 	public String getId()
 	{
 		return id;
