@@ -1,6 +1,7 @@
 package com.niit.backend.config;
 
 import java.util.Properties;
+
 import javax.sql.DataSource;
 
 import org.apache.commons.dbcp2.BasicDataSource;
@@ -11,7 +12,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 
 @Configuration
 @ComponentScan(basePackages ={"com.niit.backend"})
@@ -27,8 +27,6 @@ public class ApplicationConfig
 	private final static String DATABASE_DIALECT = "org.hibernate.dialect.H2Dialect";
 	private final static String DATABASE_USERNAME = "sa";
 	private final static String DATABASE_PASSOWRD = "janu";
-	
-	
 	/*
 	 * DataSource Bean
 	 * */
@@ -48,7 +46,6 @@ public class ApplicationConfig
 		
 		return basicDataSource;
 	}
-	
 	/*
 	 * Session Factory Bean
 	 * */
@@ -63,7 +60,6 @@ public class ApplicationConfig
 		
 		return sessionBuilder.buildSessionFactory();
 	}
-
 	/*
 	 *For Hibernate Properties 
 	 * */
@@ -79,7 +75,6 @@ public class ApplicationConfig
 		
 		return properties;
 	}
-	
 	/*
 	 * Hibernate Transaction Manager
 	 * */
@@ -91,8 +86,7 @@ public class ApplicationConfig
 		
 		return transactionManager;
 	}
-	
-	@Bean(name="multipartResolver")
+	/*@Bean(name="multipartResolver")
 	public CommonsMultipartResolver getMultipartResolver(){
 		
 		long maxUploadSize = 1000000;
@@ -100,7 +94,6 @@ public class ApplicationConfig
 		multipartResolver.setMaxUploadSize(maxUploadSize);
 		
 		return multipartResolver;
-	}
-
+	}*/
 
 }

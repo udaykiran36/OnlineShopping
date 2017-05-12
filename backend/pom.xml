@@ -9,11 +9,6 @@
 
   <name>backend</name>
   <url>http://maven.apache.org</url>
-
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
-
   <dependencies>
 		<!-- https://mvnrepository.com/artifact/junit/junit -->
 		<dependency>
@@ -22,8 +17,13 @@
 			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
-
-
+       
+        <dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.1</version>
+		</dependency>
+        
 		<!-- spring-webmvc -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -94,9 +94,12 @@
 			<artifactId>spring-webflow</artifactId>
 			<version>2.4.4.RELEASE</version> 
 		</dependency>
-
-
-
+       
+        <dependency>
+			<groupId>javax.el</groupId>
+			<artifactId>javax.el-api</artifactId>
+			<version>3.0.0</version>
+		</dependency>
 
 	</dependencies>
  
