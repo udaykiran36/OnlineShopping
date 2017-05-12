@@ -11,5 +11,5 @@ public interface ProductDAO
 	public boolean update(Product product);
 	public boolean delete(String id);
 	public Product getProductByID(String id);
-	public Product getProductByName(String name);
+	
 }
