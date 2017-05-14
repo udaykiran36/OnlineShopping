@@ -27,7 +27,7 @@ public class ProductDAOTestCase
 	@Test
 	public void createProductTestCase()
 	{
-		product.setId("ELECTRONICS_001");
+		product.setId("ELEC_001");
 		product.setName("Moto G5");
 		product.setDescription("MOTO Mobile");
 		product.setCategoryID("ELECTRONICS_001");
