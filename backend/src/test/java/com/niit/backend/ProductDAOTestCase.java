@@ -28,9 +28,9 @@ public class ProductDAOTestCase
 	public void createProductTestCase()
 	{
 		product.setId("ELEC_001");
-		product.setName("Moto G5");
-		product.setDescription("MOTO Mobile");
 		product.setCategoryID("ELECTRONICS_001");
+		product.setDescription("MOTO Mobile");
+		product.setName("Moto G5");
 		product.setPrice(16000);
 		product.setSupplierID("SP_Reliance_001");
 		boolean flag = productDAO.save(product);
