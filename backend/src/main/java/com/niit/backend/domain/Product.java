@@ -1,5 +1,7 @@
 package com.niit.backend.domain;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -10,8 +12,12 @@ import org.springframework.stereotype.Component;
 @Entity
 @Table(name="Product")
 @Component
-public class Product
+public class Product implements Serializable
 {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	private String id;
 	@Column(name="name")
