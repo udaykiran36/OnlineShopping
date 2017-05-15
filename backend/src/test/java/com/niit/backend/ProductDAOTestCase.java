@@ -33,9 +33,9 @@ public class ProductDAOTestCase
 		product.setId("Elec_Pdt_001");
 		product.setName("MOTO");
 		product.setDescription("MOTO G5 Mobile");
-		product.setCategoryID("ELECTRONICS_001");
+		product.setCategory_ID("ELECTRONICS_001");
 		product.setPrice(1000);
-		product.setSupplierID("SP_Reliance_001");
+		product.setSupplier_ID("SP_Reliance_001");
 		boolean flag = productDAO.save(product);
 		assertEquals("create Product TestCase",true,flag);
 	}

@@ -26,8 +26,8 @@ public class Product implements Serializable
 	private String name;
 	private String description;
 	private int price;
-	private String categoryID;
-	private String supplierID;
+	private String category_ID;
+	private String supplier_ID;
 	@ManyToOne
 	@JoinColumn(name = "category_id", updatable = false, insertable = false, nullable = false)
 	private Category category;
@@ -69,21 +69,21 @@ public class Product implements Serializable
 	{
 		this.price = price;
 	}
-	public String getCategoryID()
+	public String getCategory_ID()
 	{
-		return categoryID;
+		return category_ID;
 	}
-	public void setCategoryID(String categoryID)
+	public void setCategory_ID(String categoryID)
 	{
-		this.categoryID = categoryID;
+		this.category_ID = category_ID;
 	}
-	public String getSupplierID()
+	public String getSupplier_ID()
 	{
-		return supplierID;
+		return supplier_ID;
 	}
-	public void setSupplierID(String supplierID)
+	public void setSupplier_ID(String supplierID)
 	{
-		this.supplierID = supplierID;
+		this.supplier_ID = supplier_ID;
 	}
 	
 }
