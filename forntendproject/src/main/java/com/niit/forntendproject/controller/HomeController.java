@@ -18,10 +18,8 @@ public class HomeController
 		 
 	}
 	@RequestMapping( value ={"/login"})
-		public String myLoginPage()
-		{
-			
-			
+	public String myLoginPage()
+	{	
 			return "login";
 	}
 	@RequestMapping( value ={"/registration"})
