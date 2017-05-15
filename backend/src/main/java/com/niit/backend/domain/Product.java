@@ -5,6 +5,8 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
@@ -26,6 +28,15 @@ public class Product implements Serializable
 	private int price;
 	private String categoryID;
 	private String supplierID;
+	@ManyToOne
+	@JoinColumn(name = "category_id", updatable = false, insertable = false, nullable = false)
+	private Category category;
+
+	@ManyToOne
+	@JoinColumn(name = "supplier_id", nullable = false, updatable = false, insertable = false)
+      //  @ManyToOne(fetch = FetchType.EAGER,cascade=CascadeType.ALL)
+    //    @JoinColumn(name = "supplier_id")
+	private Supplier supplier;
 	public String getId()
 	{
 		return id;
