@@ -3,8 +3,6 @@ package com.niit.backend.domain;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
@@ -22,40 +20,53 @@ public class Product
 	private int price;
 	private String categoryID;
 	private String supplierID;
-	public String getId() {
+	public String getId()
+	{
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(String id)
+	{
 		this.id = id;
 	}
-	public String getName() {
+	public String getName()
+	{
 		return name;
 	}
-	public void setName(String name) {
+	public void setName(String name)
+	{
 		this.name = name;
 	}
-	public String getDescription() {
+	public String getDescription()
+	{
 		return description;
 	}
-	public void setDescription(String description) {
+	public void setDescription(String description)
+	{
 		this.description = description;
 	}
-	public int getPrice() {
+	public int getPrice()
+	{
 		return price;
 	}
-	public void setPrice(int price) {
+	public void setPrice(int price)
+	{
 		this.price = price;
 	}
-	public String getCategoryID() {
+	public String getCategoryID()
+	{
 		return categoryID;
 	}
-	public void setCategoryID(String categoryID) {
+	public void setCategoryID(String categoryID)
+	{
 		this.categoryID = categoryID;
 	}
-	public String getSupplierID() {
+	public String getSupplierID()
+	{
 		return supplierID;
 	}
-	public void setSupplierID(String supplierID) {
+	public void setSupplierID(String supplierID)
+	{
 		this.supplierID = supplierID;
 	}
+	
 }
