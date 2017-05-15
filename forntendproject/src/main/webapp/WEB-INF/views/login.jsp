@@ -77,7 +77,7 @@
                                 <label class="login-field-icon fui-lock" for="login-pass"></label>
                             </div>
 
-                            <a class="btn btn-primary btn-lg btn-block" href="#">Log in</a>
+                            <a class="btn btn-primary btn-lg btn-block" href="home">Log in</a>
                             <a class="login-link" href="http://www.jquery2dotnet.com/" target="_blank">Lost your password?</a>
                         </div>
                     </div>
