@@ -16,9 +16,7 @@
  <style>
   .carousel-inner > .item > img,
   .carousel-inner > .item > a > img {
-      width: auto;
-      height:225px;
-      max-height:500px;
+      width: 70%;
       margin: auto;
   }
   </style>
@@ -38,19 +36,19 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <img src="<c:url value="E:\PICTHERS\Walls\Nature Walls\nature-wallpaper.jpg" />"/alt="nature-wallpaper" style="width:500; max-height:500;"> 
+       <img src="E:\PICTHERS\Walls\Nature Walls\nature-wallpaper.jpg" alt="nature-wallpaper" width="500" height="500">
       </div>
 
       <div class="item">
-        <img src="<c:url value="E:\PICTHERS\Walls\Nature Walls\wallpaper-nature.jpg" />"/alt="wallpaper-nature" style="width:500; max-height:500;">
+        <img src="E:\PICTHERS\Walls\Nature Walls\wallpaper-nature.jpg" alt="wallpaper-nature" width="500" height="500">
       </div>
     
       <div class="item">
-        <img src="<c:url value="E:\PICTHERS\Walls\Nature Walls\aEKJV0c.jpg" />"/alt="aEKJV0c" style="width:500; max-height:500;">
+        <img src="E:\PICTHERS\Walls\Nature Walls\aEKJV0c.jpg" alt="aEKJV0c" width="500" height="500">
       </div>
 
       <div class="item">
-         <img src="<c:url value="E:\PICTHERS\Walls\Nature Walls\ZRcYART.jpg" />"/alt="ZRcYART" style="width:500; max-height:500;">
+        <img src="E:\PICTHERS\Walls\Nature Walls\ZRcYART.jpg" alt="ZRcYART" width="500" height="500">
       </div>
     </div>
 
