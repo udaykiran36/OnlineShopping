@@ -73,7 +73,7 @@ public class Product implements Serializable
 	{
 		return category_ID;
 	}
-	public void setCategory_ID(String categoryID)
+	public void setCategory_ID(String category_ID)
 	{
 		this.category_ID = category_ID;
 	}
@@ -81,9 +81,10 @@ public class Product implements Serializable
 	{
 		return supplier_ID;
 	}
-	public void setSupplier_ID(String supplierID)
+	public void setSupplier_ID(String supplier_ID)
 	{
 		this.supplier_ID = supplier_ID;
 	}
+	
 	
 }
