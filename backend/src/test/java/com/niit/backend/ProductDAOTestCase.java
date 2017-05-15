@@ -30,10 +30,10 @@ public class ProductDAOTestCase
 	@Test
 	public void createProductTestCase()
 	{
-		product.setId("Elec_Pdt_002");
+		product.setId("Elec_Pdt_003");
 		product.setCategory_ID("ELECTRONICS_002");
-		product.setName("MOTO");
-		product.setDescription("MOTO E3 Mobile");
+		product.setName("IPHONE 6S");
+		product.setDescription("IPHONE Mobile");
 		product.setPrice(8000);
 		product.setSupplier_ID("SP_Reliance_001");
 		boolean flag = productDAO.save(product);
