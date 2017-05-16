@@ -44,8 +44,8 @@
 	 	 		<%--   <td> <a href="manage_supplier_delete/${supplier.id}"> Delete | </a>   
 	   	 		<a href="manage_supplier_edit/${supplier.id}"> Edit  </a>    </td> --%>
 	      	<td>
-	      		<td><a href="<c:url value='/manage_supplier_edit/${supplier.id}' />">Edit</a></td>			
-	        	<td><a href="<c:url value='/manage_supplier_delete/${category.id}' />">Delete</a></td>
+	      	    <td><a href="<c:url value='/manage_supplier_edit/${supplier.id}' />">Edit</a> </td>			
+	        	<td><a href="<c:url value='/manage_supplier_delete/${category.id}' />">Delete</a> </td>
 	      	</td>
 	   	 </tr>
 	    </c:forEach>
