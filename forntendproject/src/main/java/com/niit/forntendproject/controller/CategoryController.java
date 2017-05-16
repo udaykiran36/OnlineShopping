@@ -139,9 +139,6 @@ public class CategoryController
 		}
 		
 		
-	/*	session.setAttribute("categoryList", categoryDAO.list());
-		session.setAttribute("category", category);
-		*/
 	
 		
 		log.debug("End of the method updateCategory");
