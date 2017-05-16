@@ -9,6 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 public class HomeController
 {
+	
 	@RequestMapping( value ={"/","/home","/index" })
 	
 	public ModelAndView home()
@@ -20,6 +21,7 @@ public class HomeController
 	@RequestMapping( value ={"/login"})
 	public String myLoginPage()
 	{	
+		
 			return "login";
 	}
 	@RequestMapping( value ={"/registration"})
