@@ -56,6 +56,7 @@
 	<c:if test="${isUserClickedRegister=='true' }">
 		<jsp:include page="registration.jsp"></jsp:include>
 	</c:if>
+
 	<jsp:include page="admin/adminhome.jsp"></jsp:include>
 <jsp:include page="carousel.jsp"></jsp:include>
 <jsp:include page="footer.jsp"></jsp:include>

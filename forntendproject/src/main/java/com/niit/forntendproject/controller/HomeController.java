@@ -4,12 +4,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-
 @Controller
-
 public class HomeController
 {
-	
 	@RequestMapping( value ={"/","/home","/index" })
 	
 	public ModelAndView home()
@@ -21,7 +18,7 @@ public class HomeController
 	@RequestMapping( value ={"/category"})
 	public ModelAndView CategoryPage()
 	{
-		ModelAndView mv = new ModelAndView("category");
+		ModelAndView mv = new ModelAndView("categorie");
 		return mv;
 	}
 	@RequestMapping( value ={"/login"})
