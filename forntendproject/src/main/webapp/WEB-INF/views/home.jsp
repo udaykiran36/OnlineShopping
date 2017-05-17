@@ -25,10 +25,10 @@
       <a class="navbar-brand" href="home">SHOP WORLD</a>
     </div>
     <ul class="nav navbar-nav">
- 		<li><a href="product">product</a></li>
-       <li><a href="contact">AboutAs</a></li>
-        <li><a href="contact">ContactUs</a></li>
-    </ul>  
+ 			<li><a href="product">product</a></li>
+        	<li><a href="contact">AboutAs</a></li>
+        	<li><a href="contact">ContactUs</a></li>
+      </ul>
      <ul class="nav navbar-nav navbar-right">
       <li><a href="registration"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
       <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
