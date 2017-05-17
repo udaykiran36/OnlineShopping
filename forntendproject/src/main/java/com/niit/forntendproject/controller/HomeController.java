@@ -18,16 +18,16 @@ public class HomeController
 		 return mv;
 		 
 	}
+	@RequestMapping( value ={"/category"})
+	public ModelAndView CategoryPage()
+	{
+		ModelAndView mv = new ModelAndView("category");
+		return mv;
+	}
 	@RequestMapping( value ={"/login"})
 	public ModelAndView myLoginPage()
 	{	
 		ModelAndView mv = new ModelAndView("login");
-		return mv;
-	}
-	@RequestMapping( value={"/category","/viewcategory"})
-	public ModelAndView category()
-	{
-		ModelAndView mv = new ModelAndView("category");
 		return mv;
 	}
 	@RequestMapping( value ={"/registration"})
