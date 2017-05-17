@@ -8,18 +8,11 @@ import org.springframework.web.servlet.ModelAndView;
 public class HomeController
 {
 	@RequestMapping( value ={"/","/home","/index" })
-	
 	public ModelAndView home()
 	{
 		 ModelAndView mv=new ModelAndView("home");
 		 return mv;
 		 
-	}
-	@RequestMapping( value ={"/category"})
-	public ModelAndView CategoryPage()
-	{
-		ModelAndView mv = new ModelAndView("categorie");
-		return mv;
 	}
 	@RequestMapping( value ={"/login"})
 	public ModelAndView myLoginPage()

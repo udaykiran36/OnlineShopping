@@ -25,10 +25,9 @@
       <a class="navbar-brand" href="home">SHOP WORLD</a>
     </div>
     <ul class="nav navbar-nav">
- 
-      <li><a href="product">product</a></li>
-      <li><a href="contact">AboutUS</a></li>
-      <li><a href="contact">ContactUs</a></li>
+ 		<li><a href="product">product</a></li>
+       <li><a href="contact">AboutAs</a></li>
+        <li><a href="contact">ContactUs</a></li>
     </ul>  
      <ul class="nav navbar-nav navbar-right">
       <li><a href="registration"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
@@ -56,7 +55,6 @@
 	<c:if test="${isUserClickedRegister=='true' }">
 		<jsp:include page="registration.jsp"></jsp:include>
 	</c:if>
-
 	<jsp:include page="admin/adminhome.jsp"></jsp:include>
 <jsp:include page="carousel.jsp"></jsp:include>
 <jsp:include page="footer.jsp"></jsp:include>
