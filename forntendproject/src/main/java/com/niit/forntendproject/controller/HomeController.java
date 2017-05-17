@@ -19,9 +19,16 @@ public class HomeController
 		 
 	}
 	@RequestMapping( value ={"/login"})
-	public String myLoginPage()
+	public ModelAndView myLoginPage()
 	{	
-			return "login";
+		ModelAndView mv = new ModelAndView("login");
+		return mv;
+	}
+	@RequestMapping( value={"/category","/viewcategory"})
+	public ModelAndView category()
+	{
+		ModelAndView mv = new ModelAndView("category");
+		return mv;
 	}
 	@RequestMapping( value ={"/registration"})
 	public ModelAndView registration()
