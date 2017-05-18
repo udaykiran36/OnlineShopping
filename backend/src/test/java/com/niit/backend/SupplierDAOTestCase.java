@@ -28,9 +28,9 @@ public class SupplierDAOTestCase
 	@Test
 	public void createSupplierTestCase()
 	{
-		supplier.setId("SP_Reliance_001");
+		supplier.setId("SP_Reliance_002");
 		supplier.setName("SP_Reliance");
-		supplier.setAddress("Hyderabad");
+		supplier.setAddress("Bangalore");
 		boolean flag = supplierDAO.save(supplier);
 		assertEquals("create Supplier TestCase",true,flag);
 	}
