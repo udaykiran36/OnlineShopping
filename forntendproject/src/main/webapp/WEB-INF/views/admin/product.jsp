@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    
-    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -14,8 +12,8 @@
 <body>
 	<h1>Add a Product</h1>
 	<c:url var="addAction" value="/manage_product_add?${_csrf.parameterName}=${_csrf.token}"></c:url>
-    
-	<form:form action="${addAction}" commandName="product" enctype="multipart/form-data" method="post">
+	<form:form action="${addAction}" commandName="product" 
+			   enctype="multipart/form-data" method="post">
 		<table>
 			<tr>
 				<td>
@@ -33,6 +31,7 @@
 						<td><form:input path="id" pattern=".{5,20}" required="true" title="id should contains 5 to 20 characters" /></td>
 					</c:otherwise>
 				</c:choose>
+			</tr>
 			<tr>
 				<form:input path="id" hidden="true" />
 				<td>
@@ -88,7 +87,6 @@
 				</td>
 			</tr>
 		</table>
-		
 		<input type="hidden" 
              name="${_csrf.parameterName}" 
              value="${_csrf.token}" />
@@ -122,6 +120,5 @@
 		</c:forEach>
 	  </table>
 	</c:if>
-	
 </body>
 </html>

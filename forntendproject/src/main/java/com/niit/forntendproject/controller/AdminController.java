@@ -34,7 +34,6 @@ public class AdminController
 	public ModelAndView manageProducts()
 	{
 		log.debug("Starting of the method manageProducts");
-		
 		ModelAndView mv = new ModelAndView("admin/product");
 		mv.addObject("isAdmin", "true");
 		mv.addObject("isAdminClickedProducts", "true");
