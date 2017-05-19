@@ -137,10 +137,6 @@ public class CategoryController
 			categoryDAO.update(category);
 			mv.addObject("message", "Category update successfuly ");
 		}
-		
-		
-	
-		
 		log.debug("End of the method updateCategory");
 		
 		return mv;
