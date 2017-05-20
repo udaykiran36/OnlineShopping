@@ -19,6 +19,7 @@ public class HomeController
 	public ModelAndView myLoginPage()
 	{	
 		ModelAndView mv = new ModelAndView("login");
+		
 		return mv;
 	}
 	@RequestMapping( value ={"/registration"})
