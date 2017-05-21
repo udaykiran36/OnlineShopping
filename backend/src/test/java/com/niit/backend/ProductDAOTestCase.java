@@ -36,7 +36,8 @@ public class ProductDAOTestCase
 		product.setDescription("IPHONE Mobile");
 		product.setPrice(8000);
 		product.setSupplier_ID("SP_Reliance_001");
-		boolean flag = productDAO.save(product);
+		product.setQuantity(1);
+		boolean flag = productDAO.saveOrupdate(product);
 		assertEquals("create Product TestCase",true,flag);
 	}
 	/*@Test
@@ -48,7 +49,8 @@ public class ProductDAOTestCase
 		product.setCategoryID("");
 		product.setPrice(1000);
 		product.setSupplierID("");
-		boolean flag = productDAO.save(product);
+		proudect.setQuantity(4);
+		boolean flag = productDAO.saveOrupdate(product);
 		assertEquals("update Product TestCase",true,flag);
 	}
 	@Test

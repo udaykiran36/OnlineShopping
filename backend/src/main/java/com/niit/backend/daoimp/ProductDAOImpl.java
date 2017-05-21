@@ -27,37 +27,21 @@ public class ProductDAOImpl implements ProductDAO
 	{
 		return sessionFactory.getCurrentSession().createQuery("from product").list();
 	}
-
 	@Override
-	public boolean save(Product product)
+	public boolean saveOrupdate(Product product)
 	{
-		try
+		try 
 		{
-			sessionFactory.getCurrentSession().save(product);
-		}
-		catch(Exception e)
+			sessionFactory.getCurrentSession().saveOrUpdate(product);
+		} 
+		catch (Exception e)
 		{
+			
 			e.printStackTrace();
 			return false;
 		}
 		return true;
 	}
-
-	@Override
-	public boolean update(Product product)
-	{
-		try
-		{
-			sessionFactory.getCurrentSession().update(product);
-		}
-		catch(Exception e)
-		{
-			e.printStackTrace();
-			return false;
-		}
-		return true;
-	}
-
 	@Override
 	public boolean delete(String id)
 	{
@@ -91,5 +75,11 @@ public class ProductDAOImpl implements ProductDAO
 		query.setString(0, categoryID);
 		
 	    return	query.list();
+	}
+	
+	@Override
+	public List<Product> getAllProductsBySupplierId(String supplierId)
+	{
+		return sessionFactory.getCurrentSession().createQuery("from Product where supplier_Id = ?").setString(0, supplierId).list();
 	}
 }

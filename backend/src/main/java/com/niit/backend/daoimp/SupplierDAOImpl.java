@@ -24,7 +24,7 @@ public class SupplierDAOImpl implements SupplierDAO
 	@Override
 	public List<Supplier> list()
 	{
-		return sessionFactory.getCurrentSession().createQuery("from category").list();
+		return sessionFactory.getCurrentSession().createQuery("from Supplier").list();
 	}
 
 	@Override

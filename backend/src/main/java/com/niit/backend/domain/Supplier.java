@@ -23,6 +23,14 @@ public class Supplier
 	private String address;
 	@OneToMany(mappedBy="supplier",fetch=FetchType.EAGER)
 	private Set<Product> products;
+	public Set<Product> getProducts()
+	{
+		return products;
+	}
+	public void setProducts(Set<Product> products)
+	{
+		this.products = products;
+	}
 	public String getId()
 	{
 		return id;

@@ -39,13 +39,16 @@ public class CategoryDAOTestCase
 			category.setId("Appliances_012");
 			category.setName("Appliances");
 			category.setDescription("All Appliances Products are Available");
-			boolean flag = categoryDAO.save(category);
+			boolean flag = categoryDAO.update(category);
 			assertEquals("update Category TestCase",true,flag);
 	   }
 	  @Test
 	   public void deleteCategoryTestCase()
 	   {
-		
+		category.setName("BOOKS&MORE_001");
+		boolean flag = categoryDAO.delete(category.getName());
+		assertEquals("deleteCategoryTestCase", true, flag);
+
 	   }
 	   @Test
 	   public void getAllCategoriesTestCase()

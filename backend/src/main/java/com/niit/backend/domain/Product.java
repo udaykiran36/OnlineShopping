@@ -8,8 +8,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import org.springframework.stereotype.Component;
+import org.springframework.web.multipart.MultipartFile;
 
 @Entity
 @Table(name="Product")
@@ -26,6 +28,7 @@ public class Product implements Serializable
 	private String name;
 	private String description;
 	private int price;
+	private int quantity;
 	private String category_ID;
 	private String supplier_ID;
 	@ManyToOne
@@ -37,6 +40,8 @@ public class Product implements Serializable
       //  @ManyToOne(fetch = FetchType.EAGER,cascade=CascadeType.ALL)
     //    @JoinColumn(name = "supplier_id")
 	private Supplier supplier;
+	@Transient
+	private MultipartFile image;
 	public String getId()
 	{
 		return id;
@@ -69,6 +74,14 @@ public class Product implements Serializable
 	{
 		this.price = price;
 	}
+	public int getQuantity()
+	{
+		return quantity;
+	}
+	public void setQuantity(int quantity)
+	{
+		this.quantity = quantity;
+	}
 	public String getCategory_ID()
 	{
 		return category_ID;
@@ -84,6 +97,30 @@ public class Product implements Serializable
 	public void setSupplier_ID(String supplier_ID)
 	{
 		this.supplier_ID = supplier_ID;
+	}
+	public Category getCategory()
+	{
+		return category;
+	}
+	public void setCategory(Category category)
+	{
+		this.category = category;
+	}
+	public Supplier getSupplier()
+	{
+		return supplier;
+	}
+	public void setSupplier(Supplier supplier)
+	{
+		this.supplier = supplier;
+	}
+	public MultipartFile getImage()
+	{
+		return image;
+	}
+	public void setImage(MultipartFile image)
+	{
+		this.image = image;
 	}
 	
 	
