@@ -1,62 +1,115 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html lang="en">
+<html>
 <head>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <style>
-  .carousel-inner > .item > img,
-  .carousel-inner > .item > a > img {
-      width: 70%;
-      margin: auto;
-  }
-  </style>
+<title>Shopping Cart Web Application</title>
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+<!--   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script> -->
+<!--   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+
+<!-- <link rel="stylesheet" href="resources/css/bootstrap.css"> -->
+
+<link href="<c:url value="/resources/css/bootstrap.css" />" rel="stylesheet">
+<link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
+<link href="<c:url value="/resources/css/font-awesome.css" />" rel="stylesheet">
+<link href="<c:url value="/resources/css/cloud-zoom.css" />" rel="stylesheet">
+
+<!-- <link rel="stylesheet" href="resources/css/style.css">  -->
+
+<script src="<c:url value="/resources/js/jquery-3.2.0.js" />"></script>
+<script src="<c:url value="/resources/js/bootstrap.js" />"></script>
+<script src="<c:url value="/resources/js/CustomJS.js" />"></script>
+
+<!-- <script src="resources/js/jquery-3.2.0.js"></script>
+<script src="resources/js/bootstrap.js"></script> -->
 </head>
 <body>
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="home">SHOP WORLD</a>
-    </div>
-    <ul class="nav navbar-nav">
- 			<li><a href="product">product</a></li>
-        	<li><a href="contact">AboutAs</a></li>
-        	<li><a href="contact">ContactUs</a></li>
-      </ul>
-     <ul class="nav navbar-nav navbar-right">
-      <li><a href="registration"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-    </ul>
-  </div>
-</nav>
-<h2>Welcome to ShopingCart</h2>
+	<!-- Display Menu -->
+	<jsp:include page="menu.jsp"></jsp:include>
+	
+	<!-- Display messages -->
+	<div class="container-fluid">
+		<marquee>${message}</marquee>
+	</div>
+
+	
+
+	<!-- Display Admin Control Panel -->
 	<c:if test="${isAdmin=='true'}">
-    	<jsp:include page="admin/adminhome.jsp"></jsp:include>
+		<jsp:include page="admin/adminhome.jsp"></jsp:include>
 	</c:if>
-	<c:if test="${isAdminClickedCategories=='true'}">
-		<jsp:include page="admin/category.jsp"></jsp:include>  
+	
+	<!-- Display Admin Control Panel -->
+	<c:if test="${isUserClickedProductByCategory=='true'}">
+	<!--  <jsp:include page="categoryproducts.jsp"></jsp:include>-->
 	</c:if>
-	<c:if test="${isAdminClickedSuppliers=='true'}">
-		<jsp:include page="admin/supplier.jsp"></jsp:include> <br>
+	
+	<!-- Display Checkout Message -->
+	<c:if test="${isUserCheckedOut=='true'}"> 
+	<!--  <jsp:include page="user/checkout.jsp"></jsp:include>-->
 	</c:if>
-	<c:if test="${isAdminClickedProducts=='true'}">
-		<jsp:include page="admin/product.jsp"></jsp:include> <br>
+	
+	<!-- Display cart content -->
+	<c:if test="${isUserClickedCart=='true'}">
+	<!--<jsp:include page="user/mycart.jsp"></jsp:include>-->
 	</c:if>
-	<br>
+
+	<!-- Display admin Category -->
+	<c:if test="${isAdminClickedCategories=='true' }">
+		<jsp:include page="admin/category.jsp"></jsp:include>
+		<div class="container col-sm-offset-3 col-sm-9" style="color: green">${cMessage}</div>
+		<div class="container col-sm-offset-3 col-sm-9" style="color: green">${categoryMessage}</div>
+	</c:if>
+	
+	<!-- Displayadmin  Supplier -->
+	<c:if test="${isAdminClickedSuppliers=='true' }">
+		<jsp:include page="admin/supplier.jsp"></jsp:include>
+		<div class="container col-sm-offset-3 col-sm-9" style="color: green">${sMessage}</div>
+		<div class="container col-sm-offset-3 col-sm-9" style="color: green">${supplierMessage}</div>
+	</c:if>
+
+	<!-- Display admin Products -->
+	<c:if test="${isAdminClickedProducts=='true' }">
+		<jsp:include page="admin/product.jsp"></jsp:include>
+		<div class="container col-sm-offset-3 col-sm-9" style="color: green">${pMessage}</div>
+	</c:if>
+	
+	<!-- Display admin Contact Us -->
+	<c:if test="${isAdminClickedContactUs=='true' }">
+	<!--<jsp:include page="admin/admincontacus.jsp"></jsp:include>-->
+		<div class="container col-sm-offset-3 col-sm-9" style="color: green">${contactUsMessage}</div>
+	</c:if>
+	
+	<c:if test="${isUserSelectedProduct=='true'}">
+	<!--<jsp:include page="productpage.jsp"></jsp:include>-->
+	</c:if>
+
+	<!-- Display user Contact us -->
+	<c:if test="${isUserClickedContactUs=='true' }">
+	<!--<jsp:include page="contactus.jsp"></jsp:include>-->
+	</c:if>
+
+	<!-- Display LoginPage -->
 	<c:if test="${isUserClickedLogin=='true'}">
 		<jsp:include page="login.jsp"></jsp:include>
 	</c:if>
-	<c:if test="${isUserClickedRegister=='true' }">
+
+	<!-- Display Registration Page -->
+	<c:if test="${isUserClickedRegistration=='true'}">
 		<jsp:include page="registration.jsp"></jsp:include>
 	</c:if>
-	<jsp:include page="admin/adminhome.jsp"></jsp:include>
-<jsp:include page="carousel.jsp"></jsp:include>
-<jsp:include page="footer.jsp"></jsp:include>
+	
+	<!-- Display Carousel and Products -->
+	<c:if test="${isUserAtHomePage=='true'}">
+		<jsp:include page="carousel.jsp"></jsp:include>
+	<!--<jsp:include page="allProducts.jsp"></jsp:include>-->
+	</c:if>
+
+	
+	
+	<!-- Display Footer -->
+	<jsp:include page="footer.jsp"></jsp:include>
+
 </body>
 </html>
